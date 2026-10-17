@@ -1,9 +1,9 @@
-group = "app.template"
+group = "io.github.wonjoonseol"
 
 patches {
     about {
-        name = "Wonjoon KakaoTalk Patches"
-        description = "Personal KakaoTalk patches"
+        name = "Block KakaoPay"
+        description = "Disables KakaoPay on patched KakaoTalk builds so its integrity scan never runs (companion patch)."
         source = "git@github.com:wonjoonSeol-WS/morphe-patches.git"
         author = "wonjoonSeol-WS"
         contact = "na"
