@@ -1,6 +1,6 @@
-# 🧩 Wonjoon KakaoTalk Patches
+# 🚫 Block KakaoPay
 
-Personal [Morphe](https://morphe.software) patches for KakaoTalk.
+A single [Morphe](https://morphe.software) patch that disables KakaoPay on a patched (re-signed) KakaoTalk, so KakaoPay's integrity scan never runs. It is a companion patch, meant to run alongside other KakaoTalk patch sources, not a full patch set.
 
 **Add to Morphe:** https://morphe.software/add-source?github=wonjoonSeol-WS/morphe-patches
 
@@ -8,7 +8,7 @@ Personal [Morphe](https://morphe.software) patches for KakaoTalk.
 
 ## English
 
-A Morphe patch bundle for KakaoTalk. Currently ships one patch.
+This repository provides the **Block KakaoPay** patch only. Add it alongside other KakaoTalk patch sources (for example, shortform/feed and ad removal) in Morphe.
 
 ### Block KakaoPay
 
@@ -33,7 +33,7 @@ patch. It can be combined with other KakaoTalk patch sources in Morphe.
 
 ## 한국어
 
-카카오톡용 개인 [Morphe](https://morphe.software) 패치 모음이에요. 현재 패치 1개가 들어 있어요.
+패치된(재서명된) 카카오톡에서 카카오페이를 비활성화해 카카오페이 무결성 검사가 실행되지 않게 하는 [Morphe](https://morphe.software) 패치 하나예요. 전체 패치 모음이 아니라, 다른 카카오톡 패치 소스와 함께 쓰는 보조(companion) 패치예요.
 
 ### Block KakaoPay (카카오페이 차단)
 
