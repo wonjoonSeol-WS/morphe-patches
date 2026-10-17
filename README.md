@@ -1,91 +1,82 @@
-# 👋🧩 Morphe Patches template
+# 🧩 Wonjoon KakaoTalk Patches
 
-Template repository for Morphe Patches.
+Personal [Morphe](https://morphe.software) patches for KakaoTalk.
 
-## ❓ About
+**Add to Morphe:** https://morphe.software/add-source?github=wonjoonSeol-WS/morphe-patches
 
-Patches for apps I like.
+---
 
-<!-- TODO: Update this about section with a brief introduction/summary about this repo and what it offers. -->
+## English
 
-### How to use these patches
+A Morphe patch bundle for KakaoTalk. Currently ships one patch.
 
-Click here to add these patches to Morphe: https://morphe.software/add-source?github=xyz-user/xyz-patches
+### Block KakaoPay
+
+Closes every KakaoPay screen the moment it opens, and stops the KakaoPay integrity scan
+("Moat") from running on a patched (re-signed) build.
+
+**Why:** a patched KakaoTalk is signed with a different key than the official app, so running
+KakaoPay on it can trip integrity checks and is not safe for real payments. This patch makes
+KakaoPay unreachable on the patched app, including screens opened by an incoming money-transfer
+or gift link, so you keep the original unmodified app installed for payments and use the patched
+app only for messaging. As a side effect, the Moat scan never runs on the modified client.
+
+- **Target:** KakaoTalk 26.8.3 (APKM)
+- **Enabled by default**
+
+### Usage
+
+Install [Morphe](https://morphe.software), add this source (link above), select KakaoTalk, and
+patch. It can be combined with other KakaoTalk patch sources in Morphe.
+
+---
+
+## 한국어
+
+카카오톡용 개인 [Morphe](https://morphe.software) 패치 모음이에요. 현재 패치 1개가 들어 있어요.
+
+### Block KakaoPay (카카오페이 차단)
+
+카카오페이 화면이 열리는 즉시 닫고, 패치된(재서명된) 빌드에서 카카오페이 무결성 검사("Moat")가
+실행되지 않게 막아요.
+
+**이유:** 패치된 카카오톡은 공식 앱과 다른 키로 재서명돼 있어서, 그 위에서 카카오페이를 쓰면
+무결성 검사에 걸릴 수 있고 실제 결제에 안전하지 않아요. 이 패치는 패치된 앱에서 카카오페이를 아예
+열 수 없게 만들어요(송금/선물 링크로 열리는 화면 포함). 그래서 결제는 원본 앱으로 하고, 패치된
+앱은 메신저 용도로만 쓰면 돼요. 그 결과 변조된 클라이언트에서 Moat 스캔도 실행되지 않아요.
+
+- **대상:** 카카오톡 26.8.3 (APKM)
+- **기본값: 켜짐**
+
+### 사용법
+
+[Morphe](https://morphe.software)를 설치하고, 이 소스를 추가(위 링크)한 뒤, 카카오톡을 선택해
+패치하세요. Morphe의 다른 카카오톡 패치 소스와 함께 쓸 수 있어요.
+
+---
 
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
 
-<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release.
-     
-     If you wish for the patches list to be collapsed, then remove the word 'EXPANDED' from the comment tag above.
+<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release. -->
 
-     If you wish to manually keep this list updated then remove the PATCHES_START and PATCHES_END 
-     comment blocks entirely. -->
+#### The patch list will appear here after the first release is created.
 
-#### A list of your patches will automatically be shown here after your first patches release is created.
-
-&nbsp;
-
-## 🚀 Getting development started
-
-To start using this template, follow these steps:
-
-1. [Setup](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-development/README.md) your development environment including adding a GitHub PAT as described [here](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/2_1_setup.md#-prepare-the-environment).
-2. [Create a new repository using this template](https://github.com/new?template_name=morphe-patches-template&template_owner=MorpheApp). Select create a new repository, and **enable 'Include all branches'** 
-3. Enable "Allow GitHub Actions to create and approve pull requests" in your repo Settings > Actions > General > Workflow permissions
-4. Update the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the 
-   [group of the project](patches/build.gradle.kts#L1), and the [About](patches/build.gradle.kts#L6-L11))
-5. Update the [README.md](README.md) file to be specific of your repo, and update the links in the [issue templates](.github/ISSUE_TEMPLATE).
-6. Choose a name for your patches project. Keep in mind you must use a name that does not 
-   imply authorship by the Morphe open source project. If unsure, then simply name these
-   patches after yourself ("UserXYZ Morphe patches"). See the [NOTICE](NOTICE) for details. 
-7. (Optional): Add `patches-bundle.png` to the project if you want a custom icon to show in
-   Morphe Manager instead of your GitHub profile avatar.
-
-🎉 You are now ready to start creating patches!
-
-## 🧑‍💻 Dev usage
-
-To develop and release your Patches using this template:
-
-- **Make all changes to the `dev` branch.**
-- For local development work build your patches using the gradle task `./gradlew buildAndroid` to generate the mpp file found in `patches/build/libs/patches-*.mpp`. Apply your patches locally using Morphe Desktop tool like any other patch bundle.
-- Always use [Semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages for commits. To keep it simple use only 3 commit message types: 
-  - `feat: Added a new feature`
-  - `fix: Some problem now fixed`
-  - `chore: Random change you do not want in the user facing changelog`
-- Commits of `fix:` and `feat:` will automatically generate new pre-releases and `chore:` will not create a new release.
-- Users can apply your dev branch releases by enabling `pre-release` in Morphe Manager patch sources.
-- When your dev branch is ready, and you want a stable release, merge dev branch to main (do not squash, and only merge).
-- **Always use semantic release (release.yml)**. Do not manually upload or create releases by hand
-  because many files must be updated and release.yml handles everything.
-
-## 🤓 Tips
-- See the [patcher documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/1_patcher_intro.md) for more examples of creating patches and fingerprints.
-- Do not use AI to create new release scripts. The `release.yml` here already handles everything.
-  If you need something custom with your releases then modify the existing `release.yml`
-  and `.releaserc` instead of writing everything new from scratch.
-- Do not manually edit or manually commit any generated files such as: `patches-list.json`,
-  `patches-bundle.json`, `CHANGELOG.md`.  These files will be automatically updated by `release.yml`.
-- Do not force push any semantic release commits as that will break all future releases.
-  If you need to fix a broken release, it's always easiest to create a new release instead of 
-  fixing an existing release.
-
-
-<!-- The patches end tag is intentionally placed here so the first release will clean up 
-     this readme of all developer instructions above. -->
 <!-- PATCHES_END -->
 
-### 🛠️ Building locally
+## 🛠️ Building
 
 - Run `./gradlew buildAndroid`
-- The built patches .mpp file is found in `patches/build/libs/patches-*.mpp`
-- Patch the mpp file using [Morphe-Desktop](https://github.com/MorpheApp/morphe-desktop)
-  like any other patch bundle.
+- The built `.mpp` is in `patches/build/libs/patches-*.mpp`; apply it with
+  [Morphe Desktop](https://github.com/MorpheApp/morphe-desktop) like any other patch bundle.
 
-See the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation) for more information.
+## ⚠️ Disclaimer
+
+For personal and research use. A patched build is re-signed and is not the official app; use the
+official KakaoTalk for payments and anything security-sensitive. Not affiliated with or endorsed
+by Kakao. Using a modified client may violate KakaoTalk's terms of service.
 
 ## 📜 License
 
-UserXYZ Patches are licensed under the [GNU General Public License v3.0](LICENSE)
+Licensed under the [GNU General Public License v3.0](LICENSE).
