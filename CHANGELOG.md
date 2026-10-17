@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/wonjoonSeol-WS/morphe-patches/compare/v1.0.0...v1.0.1) (2026-10-17)
+
+### 🐛 Bug Fixes
+
+* replace app.template namespace with io.github.wonjoonseol ([a564bd8](https://github.com/wonjoonSeol-WS/morphe-patches/commit/a564bd8d09cf5d84907f2dcbdf542eec8049a18e))
+
 ## 1.0.0 (2026-10-17)
 
 ### ✨ New Features
