@@ -128,3 +128,9 @@ node_modules/
 # Ignore IDEA files
 .idea/
 local.properties
+
+# Local target APKs (research only, never commit or distribute)
+/data/
+
+# Private notes (never publish)
+/docs/patch-plan.md
