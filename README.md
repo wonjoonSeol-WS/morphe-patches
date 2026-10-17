@@ -78,6 +78,17 @@ patch. It can be combined with other KakaoTalk patch sources in Morphe.
 
 ## 🛠️ Building
 
+Building resolves the Morphe patcher from the Morphe GitHub Packages registry, which requires
+authentication even for public packages. Create a GitHub token with the `read:packages` scope and
+add it to `~/.gradle/gradle.properties` (your user home, never committed):
+
+```properties
+gpr.user=your-github-username
+gpr.key=your-token-with-read-packages
+```
+
+Then:
+
 - Run `./gradlew buildAndroid`
 - The built `.mpp` is in `patches/build/libs/patches-*.mpp`; apply it with
   [Morphe Desktop](https://github.com/MorpheApp/morphe-desktop) like any other patch bundle.
