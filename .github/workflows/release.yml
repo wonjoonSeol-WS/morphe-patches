@@ -16,10 +16,15 @@ jobs:
       attestations: write
     runs-on: ubuntu-latest
     steps:
+      # The main ruleset requires pull requests, and GITHUB_TOKEN cannot bypass it, so the release
+      # commit and tag are pushed with a write-enabled deploy key that is on the ruleset bypass list.
+      # Checking out with ssh-key makes origin an SSH remote, which semantic-release then pushes to.
+      # Release API calls (GitHub Release, assets) still use GITHUB_TOKEN below.
       - name: Checkout
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          ssh-key: ${{ secrets.RELEASE_DEPLOY_KEY }}
 
       - name: Setup Java
         uses: actions/setup-java@v6
