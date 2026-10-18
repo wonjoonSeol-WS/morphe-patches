@@ -2,13 +2,9 @@ package io.github.wonjoonseol.patches.kakaotalk.kakaopay
 
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
-import app.morphe.patcher.extensions.InstructionExtensions.instructions
-import app.morphe.patcher.patch.PatchException
+import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
 import io.github.wonjoonseol.patches.shared.Constants.COMPATIBILITY_KAKAO
-import com.android.tools.smali.dexlib2.Opcode
-import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
-import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 
 // initMoat() runs KakaoPay's native tamper/root scan ("Moat") and is the last step of
 // PayBaseActivity.onCreate(); neither the class nor the method name is obfuscated.
@@ -17,6 +13,9 @@ internal object PayBaseActivityOnCreateFingerprint : Fingerprint(
     name = "onCreate",
     parameters = listOf("Landroid/os/Bundle;"),
     returnType = "V",
+    filters = listOf(
+        methodCall(definingClass = "this", name = "initMoat"),
+    ),
 )
 
 @Suppress("unused")
@@ -30,14 +29,7 @@ val blockPayPatch = bytecodePatch(
 
     execute {
         val method = PayBaseActivityOnCreateFingerprint.method
-
-        val initMoatIndex = method.instructions.indexOfFirst {
-            it.opcode == Opcode.INVOKE_DIRECT &&
-                ((it as? ReferenceInstruction)?.reference as? MethodReference)?.name == "initMoat"
-        }
-        if (initMoatIndex < 0) {
-            throw PatchException("Could not find initMoat() call in PayBaseActivity.onCreate")
-        }
+        val initMoatIndex = PayBaseActivityOnCreateFingerprint.instructionMatches.first().index
 
         // finish() is null-safe during onCreate: setCloseTransition() guards closeTransition.
         method.addInstructions(
