@@ -1,6 +1,6 @@
-# 🚫 Block KakaoPay
+# 🚫 Block KakaoPay + KakaoTalk cleanup
 
-A single [Morphe](https://morphe.software) patch that disables KakaoPay on a patched (re-signed) KakaoTalk, so KakaoPay's integrity scan never runs. It is a companion patch, meant to run alongside other KakaoTalk patch sources, not a full patch set.
+A small [Morphe](https://morphe.software) patch bundle for KakaoTalk. **Block KakaoPay** disables KakaoPay on a patched (re-signed) KakaoTalk so its integrity scan never runs, and three cleanups remove ad slots and tune a list that other KakaoTalk patch sources leave behind. It is a companion bundle, meant to run alongside other KakaoTalk patch sources, not a full patch set.
 
 **Add to Morphe:** https://morphe.software/add-source?github=wonjoonSeol-WS/morphe-patches
 
@@ -8,7 +8,7 @@ A single [Morphe](https://morphe.software) patch that disables KakaoPay on a pat
 
 ## English
 
-This repository provides the **Block KakaoPay** patch only. Add it alongside other KakaoTalk patch sources (for example, shortform/feed and ad removal) in Morphe.
+This repository provides four patches. Add it alongside other KakaoTalk patch sources (for example, shortform/feed and ad removal) in Morphe. All four target KakaoTalk 26.8.3 (APKM) and are enabled by default; deselect any you do not want when you patch.
 
 ### Block KakaoPay
 
@@ -21,8 +21,23 @@ KakaoPay unreachable on the patched app, including screens opened by an incoming
 or gift link, so you keep the original unmodified app installed for payments and use the patched
 app only for messaging. As a side effect, the Moat scan never runs on the modified client.
 
-- **Target:** KakaoTalk 26.8.3 (APKM)
-- **Enabled by default**
+### Disable Friend Feed ads
+
+Stops the Friends tab news feed (소식) from loading its sponsored feed ad and its BizBoard native
+ad, and removes the empty BizBoard placeholder card, so the ad leaves no blank slot behind.
+
+### Hide Friends tab banner ad
+
+Collapses the empty BizBoard banner slot at the top of the Friends tab. Without it the slot keeps
+its height as a blank box under the chips; with it the rest of the list moves up and more rows fit
+on screen. This is a resource patch (it edits one layout), not a bytecode patch.
+
+### Set collapsed OpenChat room count
+
+Sets how many OpenChat rooms show in the collapsed list before the more button. KakaoTalk shows 3;
+this patch defaults to 4. Change it at patch time with the `collapsedCount` option (1 to 50): in
+Morphe Manager use the option field on this patch, or with Morphe Desktop pass
+`-O collapsedCount=5` after this bundle's `-p`.
 
 ### Usage
 
@@ -33,7 +48,7 @@ patch. It can be combined with other KakaoTalk patch sources in Morphe.
 
 ## 한국어
 
-패치된(재서명된) 카카오톡에서 카카오페이를 비활성화해 카카오페이 무결성 검사가 실행되지 않게 하는 [Morphe](https://morphe.software) 패치 하나예요. 전체 패치 모음이 아니라, 다른 카카오톡 패치 소스와 함께 쓰는 보조(companion) 패치예요.
+카카오톡용 작은 [Morphe](https://morphe.software) 패치 묶음이에요. **Block KakaoPay**는 패치된(재서명된) 카카오톡에서 카카오페이를 비활성화해 무결성 검사가 실행되지 않게 하고, 나머지 세 개는 다른 카카오톡 패치 소스가 남겨두는 광고 자리와 목록 설정을 정리해요. 전체 패치 모음이 아니라, 다른 카카오톡 패치 소스와 함께 쓰는 보조(companion) 묶음이에요.
 
 ### Block KakaoPay (카카오페이 차단)
 
@@ -45,8 +60,25 @@ patch. It can be combined with other KakaoTalk patch sources in Morphe.
 열 수 없게 만들어요(송금/선물 링크로 열리는 화면 포함). 그래서 결제는 원본 앱으로 하고, 패치된
 앱은 메신저 용도로만 쓰면 돼요. 그 결과 변조된 클라이언트에서 Moat 스캔도 실행되지 않아요.
 
-- **대상:** 카카오톡 26.8.3 (APKM)
-- **기본값: 켜짐**
+### Disable Friend Feed ads (친구 소식 광고 제거)
+
+친구 탭의 소식 피드가 스폰서 피드 광고와 BizBoard 네이티브 광고를 불러오지 않게 하고, 비어 있는
+BizBoard 자리 카드도 없애서 광고가 빈 칸으로 남지 않게 해요.
+
+### Hide Friends tab banner ad (친구 탭 배너 광고 자리 제거)
+
+친구 탭 맨 위의 비어 있는 BizBoard 배너 자리를 접어요. 이 패치가 없으면 그 자리가 칩 아래에
+빈 상자로 남고, 있으면 나머지 목록이 위로 올라와 더 많은 줄이 한 화면에 보여요. 바이트코드가
+아니라 레이아웃 하나를 고치는 리소스 패치예요.
+
+### Set collapsed OpenChat room count (오픈채팅 접힘 개수)
+
+더보기 버튼 전에 접힌 오픈채팅 목록에 보이는 방 개수를 정해요. 카카오톡 기본값은 3개이고, 이
+패치의 기본값은 4개예요. 패치할 때 `collapsedCount` 옵션(1~50)으로 바꿀 수 있어요. Morphe
+Manager에서는 이 패치의 옵션 칸을 쓰고, Morphe Desktop에서는 이 묶음의 `-p` 뒤에
+`-O collapsedCount=5`처럼 넘기세요.
+
+대상은 모두 카카오톡 26.8.3 (APKM)이고 기본값은 켜짐이에요. 필요 없는 패치는 패치할 때 선택 해제하세요.
 
 ### 사용법
 
