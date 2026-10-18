@@ -26,11 +26,15 @@ app only for messaging. As a side effect, the Moat scan never runs on the modifi
 Stops the Friends tab news feed (소식) from loading its sponsored feed ad and its BizBoard native
 ad, and removes the empty BizBoard placeholder card, so the ad leaves no blank slot behind.
 
+![News feed before and after: the sponsored card is gone](images/before-after-news-feed.png)
+
 ### Hide Friends tab banner ad
 
 Collapses the empty BizBoard banner slot at the top of the Friends tab. Without it the slot keeps
 its height as a blank box under the chips; with it the rest of the list moves up and more rows fit
 on screen. This is a resource patch (it edits one layout), not a bytecode patch.
+
+![Friends tab before and after: the blank banner space is reclaimed](images/before-after-friends-tab.png)
 
 ### Set collapsed OpenChat room count
 
@@ -65,11 +69,15 @@ patch. It can be combined with other KakaoTalk patch sources in Morphe.
 친구 탭의 소식 피드가 스폰서 피드 광고와 BizBoard 네이티브 광고를 불러오지 않게 하고, 비어 있는
 BizBoard 자리 카드도 없애서 광고가 빈 칸으로 남지 않게 해요.
 
+![소식 피드 전후 비교: 스폰서 카드가 사라짐](images/before-after-news-feed.png)
+
 ### Hide Friends tab banner ad (친구 탭 배너 광고 자리 제거)
 
 친구 탭 맨 위의 비어 있는 BizBoard 배너 자리를 접어요. 이 패치가 없으면 그 자리가 칩 아래에
 빈 상자로 남고, 있으면 나머지 목록이 위로 올라와 더 많은 줄이 한 화면에 보여요. 바이트코드가
 아니라 레이아웃 하나를 고치는 리소스 패치예요.
+
+![친구 탭 전후 비교: 빈 배너 공간이 사라짐](images/before-after-friends-tab.png)
 
 ### Set collapsed OpenChat room count (오픈채팅 접힘 개수)
 
