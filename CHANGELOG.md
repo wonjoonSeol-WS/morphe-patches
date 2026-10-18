@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/wonjoonSeol-WS/morphe-patches/compare/v1.0.1...v1.1.0) (2026-10-18)
+
+### ✨ New Features
+
+* add collapsed OpenChat room count patch with collapsedCount option ([461116e](https://github.com/wonjoonSeol-WS/morphe-patches/commit/461116e364c57e711f7ac96708170a0f1d07806a))
+* add Friends tab and news feed ad cleanup patches ([6f4b730](https://github.com/wonjoonSeol-WS/morphe-patches/commit/6f4b730842d6bf5349ff818d29bd1a46789b1ea3))
+
 ## [1.0.1](https://github.com/wonjoonSeol-WS/morphe-patches/compare/v1.0.0...v1.0.1) (2026-10-17)
 
 ### 🐛 Bug Fixes

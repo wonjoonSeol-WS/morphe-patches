@@ -98,9 +98,9 @@ Manager에서는 이 패치의 옵션 칸을 쓰고, Morphe Desktop에서는 이
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.1](https://github.com/wonjoonSeol-WS/morphe-patches/releases/tag/v1.0.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;1 patches total
+> **[v1.1.0](https://github.com/wonjoonSeol-WS/morphe-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;4 patches total
 <details open>
-<summary>📦 Kakao Talk&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<summary>📦 Kakao Talk&nbsp;&nbsp;•&nbsp;&nbsp;4 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -111,6 +111,9 @@ Manager에서는 이 패치의 옵션 칸을 쓰고, Morphe Desktop에서는 이
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Block KakaoPay](#block-kakaopay) | Closes every KakaoPay screen the moment it opens and stops the KakaoPay Moat scan from running on this re-signed client. Pay on the original, unpatched app instead. |  |
+| [Disable Friend Feed ads](#disable-friend-feed-ads) | Stops the Friends tab news feed from loading its sponsored feed ad and its BizBoard native ad, and removes the empty BizBoard placeholder card so no blank slot is left behind, which other KakaoTalk ad patch sources leave in place. |  |
+| [Hide Friends tab banner ad](#hide-friends-tab-banner-ad) | Collapses the empty BizBoard banner slot at the top of the Friends tab so it leaves no blank space, which other KakaoTalk ad patch sources leave reserved. |  |
+| [Set collapsed OpenChat room count](#set-collapsed-openchat-room-count) | Sets how many OpenChat rooms show in the collapsed list before the more button (KakaoTalk default is 3). Change it with the collapsedCount option at patch time. | • Collapsed OpenChat room count |
 
 </details>
 
