@@ -70,10 +70,10 @@ In KakaoTalk's Morphe settings, turn on / 카카오톡 안의 Morphe 설정에�
 - [ ] Opening KakaoPay closes it at once / 카카오페이를 열면 바로 닫힘
 - [ ] Never pay with the patched app / 패치된 앱으로 결제 금지
 
-Even then the risk remains: a re-signed build can never pass Play Integrity. The repo owner has not
-been banned and keeps using this setup (as of October 2026). Apply it carefully at your own risk.
-그래도 위험은 남아요. 재서명된 빌드는 Play Integrity를 절대 통과할 수 없어요. 현재 리포 주인은
-차단당하지 않고 계속 잘 쓰고 있어요(2026년 10월 기준). 본인 책임으로 신중하게 적용해주세요.
+Even then the risk remains: a re-signed build can never pass Play Integrity. Apply it carefully at
+your own risk.
+그래도 위험은 남아요. 재서명된 빌드는 Play Integrity를 절대 통과할 수 없어요. 본인 책임으로 신중하게
+적용해주세요.
 
 ## 💻 Morphe Desktop
 
