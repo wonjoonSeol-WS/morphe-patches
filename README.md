@@ -4,7 +4,7 @@
 [AmpleReVanced](https://github.com/AmpleReVanced/revanced-patches).
 카카오톡용 Morphe 패치 묶음이에요. AmpleReVanced와 함께 써요.
 
-**Add to Morphe:** https://morphe.software/add-source?github=wonjoonSeol-WS/morphe-patches
+**Add to Morphe:** https://morphe.software/add-source?github=wonjoonSeol/morphe-patches
 
 > [!IMPORTANT]
 > **KakaoTalk 26.8.3 only.** 26.9.0 is not supported.
@@ -24,7 +24,7 @@
 |---|---|---|
 | Morphe Manager | latest | [morphe.software](https://morphe.software) |
 | KakaoTalk | **26.8.3** (APKM) | [APKMirror](https://www.apkmirror.com/apk/kakao-corp/kakaotalk/kakaotalk-messenger-26-8-3-release/) |
-| This bundle / 이 묶음 | latest | [Add to Morphe](https://morphe.software/add-source?github=wonjoonSeol-WS/morphe-patches) |
+| This bundle / 이 묶음 | latest | [Add to Morphe](https://morphe.software/add-source?github=wonjoonSeol/morphe-patches) |
 | AmpleReVanced | **v1.5.0-dev.19** | [patches-1.5.0-dev.19.mpp](https://github.com/AmpleReVanced/revanced-patches/releases/download/v1.5.0-dev.19/patches-1.5.0-dev.19.mpp), add as a **Local** source / **로컬** 소스로 추가 |
 
 - Don't use AmpleReVanced's **Pre-release patches** toggle: v1.5.0-dev.22 targets 26.9.0.
@@ -122,7 +122,7 @@ with the `collapsedCount` option (1 to 50).
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.1.0](https://github.com/wonjoonSeol-WS/morphe-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;4 patches total
+> **[v1.1.0](https://github.com/wonjoonSeol/morphe-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;4 patches total
 <details open>
 <summary>📦 Kakao Talk&nbsp;&nbsp;•&nbsp;&nbsp;4 patches</summary>
 <br>

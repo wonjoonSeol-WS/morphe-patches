@@ -4,8 +4,8 @@ patches {
     about {
         name = "Block KakaoPay"
         description = "Disables KakaoPay on patched KakaoTalk builds so its integrity scan never runs (companion patch)."
-        source = "git@github.com:wonjoonSeol-WS/morphe-patches.git"
-        author = "wonjoonSeol-WS"
+        source = "git@github.com:wonjoonSeol/morphe-patches.git"
+        author = "wonjoonSeol"
         contact = "na"
         website = "na"
         license = "GPLv3"
